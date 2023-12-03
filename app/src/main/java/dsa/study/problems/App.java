@@ -3,7 +3,7 @@
  */
 package dsa.study.problems;
 
-import dsa.study.problems.linkedlist.SinglyLinkedList;
+import dsa.study.problems.linkedlist.DoublyLinkedList;
 
 public class App {
     public String getGreeting() {
@@ -11,29 +11,33 @@ public class App {
     }
 
     public static void main(String[] args) {
-        SinglyLinkedList list = new SinglyLinkedList();
+        DoublyLinkedList list = new DoublyLinkedList();
 
-        // Inserting elements
-        System.out.println("Inserting elements:");
-        list.insertAtBeginning(10);
-        list.insertAtEnd(30);
-        list.insertAtMiddle(20, 1); // Insert 20 at position 1
-        list.printList();
+        // Inserting elements at the beginning
+        list.insertAtBeginning(10); // List: 10
+        list.printList(); // Expected Output: Doubly Linked List: 10
 
-        // Deleting elements
-        System.out.println("Deleting elements:");
-        list.deleteAtBeginning(); // Deletes the first element
-        list.printList();
+        list.insertAtBeginning(5); // List: 5 <-> 10
+        list.printList(); // Expected Output: Doubly Linked List: 5 <-> 10
 
-        list.deleteAtLast(); // Deletes the last element
-        list.printList();
+        // Inserting elements at the end
+        list.insertAtEnd(15); // List: 5 <-> 10 <-> 15
+        list.printList(); // Expected Output: Doubly Linked List: 5 <-> 10 <-> 15
 
-        // Insert more elements to demonstrate deleteAtMiddle
-        list.insertAtBeginning(40);
-        list.insertAtBeginning(50);
-        list.printList();
+        // Inserting elements in the middle
+        list.insertAtMiddle(12, 2); // List: 5 <-> 10 <-> 12 <-> 15
+        list.printList(); // Expected Output: Doubly Linked List: 5 <-> 10 <-> 12 <-> 15
 
-        list.deleteAtMiddle(1); // Deletes element at position 1
-        list.printList();
+        // Deleting elements from the beginning
+        list.deleteAtBeginning(); // List: 10 <-> 12 <-> 15
+        list.printList(); // Expected Output: Doubly Linked List: 10 <-> 12 <-> 15
+
+        // Deleting elements from the end
+        list.deleteAtEnd(); // List: 10 <-> 12
+        list.printList(); // Expected Output: Doubly Linked List: 10 <-> 12
+
+        // Deleting elements from the middle
+        list.deleteAtMiddle(1); // List: 10
+        list.printList(); // Expected Output: Doubly Linked List: 10
     }
 }
