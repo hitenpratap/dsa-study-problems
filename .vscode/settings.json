@@ -1,3 +1,4 @@
 {
-	"java.compile.nullAnalysis.mode": "automatic"
+	"java.compile.nullAnalysis.mode": "automatic",
+	"java.home":"/Users/hitenpratap99/.jenv/versions/openjdk64-17.0.7"
 }

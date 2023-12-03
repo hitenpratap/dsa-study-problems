@@ -3,12 +3,37 @@
  */
 package dsa.study.problems;
 
+import dsa.study.problems.linkedlist.SinglyLinkedList;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        // Inserting elements
+        System.out.println("Inserting elements:");
+        list.insertAtBeginning(10);
+        list.insertAtEnd(30);
+        list.insertAtMiddle(20, 1); // Insert 20 at position 1
+        list.printList();
+
+        // Deleting elements
+        System.out.println("Deleting elements:");
+        list.deleteAtBeginning(); // Deletes the first element
+        list.printList();
+
+        list.deleteAtLast(); // Deletes the last element
+        list.printList();
+
+        // Insert more elements to demonstrate deleteAtMiddle
+        list.insertAtBeginning(40);
+        list.insertAtBeginning(50);
+        list.printList();
+
+        list.deleteAtMiddle(1); // Deletes element at position 1
+        list.printList();
     }
 }
